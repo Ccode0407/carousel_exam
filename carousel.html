@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Carousel</title>
+        <style>
+            .carousel img {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Carousel</h1>
+        <div class="carousel">
+            <img alt="First" src="https://images.unsplash.com/photo-1679933094710-35d909ec94b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MDA5NTU1NQ&ixlib=rb-4.0.3&q=80&w=1080" width="500" height="500" style="object-fit: cover; " />
+            <img alt="Second" src="https://images.unsplash.com/photo-1677628624156-a224f23be035?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MDA5NTU4NQ&ixlib=rb-4.0.3&q=80&w=1080" width="500" height="500" style="object-fit: cover; "  />
+            <img alt="Third" src="https://images.unsplash.com/photo-1679692363620-d774a6cd92e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MDA5NTYwMQ&ixlib=rb-4.0.3&q=80&w=1080"  width="500" height="500"  style="object-fit: cover; "/>
+            <img alt="Fourth" src="https://images.unsplash.com/photo-1679538699953-6b43a540ae4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MDA5NTYxNw&ixlib=rb-4.0.3&q=80&w=1080"  width="500" height="500"  style="object-fit: cover; " />
+            <img alt="Fifth" src="https://images.unsplash.com/photo-1677644334825-0eb411012ac0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MDA5NTYyOQ&ixlib=rb-4.0.3&q=80&w=1080"  width="500" height="500" style="object-fit: cover; " />
+        </div>
+        <script>
+            
+            const carouselImages = document.querySelectorAll(".carousel img");
+            let currentImageIndex = 0;
+            carouselImages[currentImageIndex].style.display = "block";
+
+            const nextImage = () => {
+                carouselImages[currentImageIndex].style.display = "none";
+                currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+                carouselImages[currentImageIndex].style.display = "block";
+            };
+
+            setInterval(nextImage, 1000);
+        </script>
+    </body>
+</html>
